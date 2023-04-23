@@ -1,0 +1,117 @@
+{
+    "openapi":"3.0.0",
+    "tags": [
+        {
+          "name": "NBP extractor",
+          "description": "An API to extract particular data from the NBP API"
+        }
+      ],
+       "servers": [
+            {
+            "url": "/"
+            }
+        ],
+        
+         "paths": {
+            "/exchanges/{currency_code}/{date}": {
+                "get" :{
+                    "tags": [
+                        "Get the average exchange rate"
+                    ],
+                    "summary": "Get the average exchange rate of a currency in a particular day",
+                    "parameters":[{
+                        "name":"currency_code",
+                        "in":"path",
+                        "description":"The currency code like GBP, USD etc.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"date",
+                        "in":"path",
+                        "description":"The date for which the rate is to be found in format YYYY-MM-DD",
+                        "required":true,
+                        "type":"string"
+                    }
+                    ],
+                    "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "NOT FOUND"
+                }
+                }
+                }
+            },
+            "/max_min/{currency_code}/{number_of_last_quotations}":{
+    
+                "get" :{
+                    "tags": [
+                        "Get the min and max average value"
+                    ],
+                    "summary": "Get the min and max average value of a currency in the N last quotations",
+                    "parameters":[{
+                        "name":"currency_code",
+                        "in":"path",
+                        "description":"The currency code like GBP, USD etc.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"number_of_last_quotations",
+                        "in":"path",
+                        "description":"The number of last quotations for which the values are to be found",
+                        "required":true,
+                        "type":"string"
+                    }
+                    ],
+                   
+                    "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "NOT FOUND"
+                }
+                }
+                }
+                },
+                "/major_diff/{currency_code}/{number_of_last_quotations}":{
+    
+                    "get" :{
+                        "tags": [
+                            "Get the major difference between buy and ask rate"
+                        ],
+                        "summary": "Get the major difference between buy and ask rate in the N last quotations",
+                        "parameters":[{
+                            "name":"currency_code",
+                            "in":"path",
+                            "description":"The currency code like GBP, USD etc.",
+                            "required":true,
+                            "type":"string"
+                        },
+                        {
+                            "name":"number_of_last_quotations",
+                            "in":"path",
+                            "description":"The number of last quotations for which the values are to be found",
+                            "required":true,
+                            "type":"string"
+                            
+                        }
+                        ],
+                       
+                        "responses": {
+                        "200": {
+                            "description": "OK"
+                            
+                        },
+                        "404": {
+                            "description": "NOT FOUND"
+                            
+                    }
+                    }
+                    }
+            }
+    }
+}
