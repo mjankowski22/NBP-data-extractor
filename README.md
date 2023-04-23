@@ -30,7 +30,7 @@ The server will be availble on localhost:5000
 ### Examples
 There are three available endpoints: /exchanges , /max_min , /major_diff .
 Each endpoint returns the answer in the JSON format.
-Each endpoint can be tested using the simple UI available on localhost:5000/swagger\
+Each endpoint can be tested using the simple UI available on localhost:5000/swagger
 
 ![image](https://user-images.githubusercontent.com/106553136/233865825-ad67c304-39e7-4250-92e7-e1c1a2e1ce1a.png)
 
