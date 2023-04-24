@@ -35,9 +35,9 @@ class TestMaxMinAverage():
 
     #Tests if data coming from the server is correct
     def test_correct_data(self):
-        correct_min = 2.8094
+        correct_min = 2.8024
         correct_max = 3.1041
-        correct_min_date = "2023-04-21"
+        correct_min_date = "2023-04-24"
         correct_max_date = "2023-02-13"
         currency_code = 'AUD'
         num_of_last_quot = 100
